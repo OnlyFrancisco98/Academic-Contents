@@ -10,62 +10,103 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="bg-light">
-    <div class="container mt-4">
-        <!-- Modal para errores -->
-        <div class="modal fade" id="errorModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-danger text-white">
-                        <h5 class="modal-title">Error</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p id="errorMessage"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white">
-                        <h2 class="text-center">Calculadora Básica</h2>
+    <div class="container-md p-4">
+        <header class="container-fluid">
+            <div class="row bg-white border rounded p-3 mb-2">
+                <div class="col-md-6">
+                    <h2 class="h4">Calculadoras y funciones matemáticas</h2>
+                </div>
+                <div class="col-md-6">
+                    <form id="formBuscar" class="d-flex">
+                        <input type="text" name="buscar" id="buscar" class="form-control me-2" placeholder="Buscar...">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <nav class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 bg-white border rounded p-3 mb-2">
+                    <a href="enConstruccion.html" class="text-decoration-none">Ver consultas</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container-fluid bg-white border rounded p-3">
+            <div class="row">
+                <div class="container p-4">
+                    <div class="modal fade" id="errorModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-danger text-white">
+                                    <h5 class="modal-title">Error</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p id="errorMessage"></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <form id="calculatorForm">
-                            <div class="mb-3">
-                                <label for="numero1" class="form-label">Número 1:</label>
-                                <input type="number" class="form-control" id="numero1" step="any" required>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card shadow">
+                                <div class="card-header bg-primary text-white">
+                                    <h2 class="text-center">Calculadora Básica</h2>
+                                </div>
+                                <div class="card-body">
+                                    <form id="calculatorForm">
+                                        <div class="md-3">
+                                            <label for="numero1" class="form-label">Número 1:</label>
+                                            <input type="number" class="form-control" id="numero1" step="any" required>
+                                        </div>
+                                        <br>
+                                        <div class="md-3">
+                                            <label for="numero2" class="form-label">Número 2:</label>
+                                            <input type="number" class="form-control" id="numero2" step="any">
+                                        </div>
+                                        <br>
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-3">
+                                            <button type="button" class="btn btn-success me-md-2" id="btnSuma">+</button>
+                                            <button type="button" class="btn btn-warning me-md-2" id="btnResta">-</button>
+                                            <button type="button" class="btn btn-info me-md-2" id="btnMulti">×</button>
+                                            <button type="button" class="btn btn-danger me-md-2" id="btnDiv">/</button>
+                                            <button type="button" class="btn btn-secondary me-md-2" id="btnRaiz">√</button>
+                                            <button type="button" class="btn btn-dark" id="btnInverso">1/x</button>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="resultado" class="form-label">Resultado:</label>
+                                            <input type="text" class="form-control" id="resultado" readonly>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="numero2" class="form-label">Número 2:</label>
-                                <input type="number" class="form-control" id="numero2" step="any">
-                            </div>
-                            
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-3">
-                                <button type="button" class="btn btn-success me-md-2" id="btnSuma">+</button>
-                                <button type="button" class="btn btn-warning me-md-2" id="btnResta">-</button>
-                                <button type="button" class="btn btn-info me-md-2" id="btnMulti">×</button>
-                                <button type="button" class="btn btn-danger me-md-2" id="btnDiv">/</button>
-                                <button type="button" class="btn btn-secondary me-md-2" id="btnRaiz">√</button>
-                                <button type="button" class="btn btn-dark" id="btnInverso">1/x</button>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="resultado" class="form-label">Resultado:</label>
-                                <input type="text" class="form-control" id="resultado" readonly>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+         <footer class="container-fluid "> 
+            <div class="row bg-white border rounded p-3 mt-2">
+                <div class="col-md-6">
+                    <a href="enConstruccion.html" class="text-decoration-none me-3">Descargas</a>
+                    <a href="enConstruccion.html" class="text-decoration-none me-3">Aplicaciones</a>
+                    <a href="enConstruccion.html" class="text-decoration-none">Dispositivos</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="text-muted">© Fmat</span>
+                </div>
+            </div>
+        </footer>
     </div>
-
     <script>
         $(document).ready(function() {
             // Función para mostrar errores en modal

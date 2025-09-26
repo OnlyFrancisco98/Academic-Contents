@@ -8,23 +8,79 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .construction-animation {
-            font-size: 2rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-light">
-    <div class="container mt-5">
-        <div class="construction-animation text-warning">
-            🚧 En construcción...
-        </div>
+
+    <div class="container-md p-4">
+
+        <header class="container-fluid">
+            <div class="row bg-white border rounded p-3 mb-2">
+                <div class="col-md-6">
+                    <h2 class="h4">Calculadoras y funciones matemáticas</h2>
+                </div>
+                <div class="col-md-6">
+                    <form id="formBuscar" class="d-flex">
+                        <input type="text" name="buscar" id="buscar" class="form-control me-2" placeholder="Buscar...">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <nav class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 bg-white border rounded p-3 mb-2">
+                    <a href="enConstruccion.html" class="text-decoration-none">Ver consultas</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Main Content -->
+        <main class="container-fluid bg-white border rounded p-3">
+            <div class="row">
+                <div class="container ">
+                    <div class="construction-animation text-warning">
+                         🚧 En construcción...
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="container-fluid "> 
+            <div class="row bg-white border rounded p-3 mt-2">
+                <div class="col-md-6">
+                    <a href="enConstruccion.html" class="text-decoration-none me-3">Descargas</a>
+                    <a href="enConstruccion.html" class="text-decoration-none me-3">Aplicaciones</a>
+                    <a href="enConstruccion.html" class="text-decoration-none">Dispositivos</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="text-muted">© Fmat</span>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script>
+        $(document).ready(function() {
+            $('#formBuscar').submit(function(e) {
+                e.preventDefault();
+                
+                const campo = $('#buscar').val().trim();
+                
+                if (campo === "") {
+                    alert("Ingresa algo en el campo. No dejar blanco");
+                    $('#buscar').focus();
+                } else {
+                    // Simular envío (sin PHP)
+                    alert("Búsqueda enviada: " + campo);
+                    // window.location.href = "buscar.php"; // Descomentar cuando tengas el PHP
+                }
+            });
+        });
+
         $(document).ready(function() {
             // Efecto de animación con jQuery
             $('.construction-animation').hide().fadeIn(1000).css('color', '#ff6b35');
@@ -35,5 +91,6 @@
             }, 1000);
         });
     </script>
+
 </body>
 </html>

@@ -8,89 +8,114 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-light">
-    <div class="container mt-4">
-        <!-- Header -->
-        <header class="row bg-white border rounded p-3 mb-3">
-            <div class="col-md-6">
-                <h2 class="h4">Calculadoras y funciones matemáticas</h2>
-            </div>
-            <div class="col-md-6">
-                <form id="formBuscar" class="d-flex">
-                    <input type="text" name="buscar" id="buscar" class="form-control me-2" placeholder="Buscar...">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
-                </form>
+    <div class="container-md p-4">
+
+        <header class="container-fluid">
+            <div class="row bg-white border rounded p-3 mb-2">
+                <div class="col-md-6">
+                    <h2 class="h4">Calculadoras y funciones matemáticas</h2>
+                </div>
+                <div class="col-md-6">
+                    <form id="formBuscar" class="d-flex">
+                        <input type="text" name="buscar" id="buscar" class="form-control me-2" placeholder="Buscar...">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+                </div>
             </div>
         </header>
 
-        <!-- Navigation -->
-        <nav class="bg-white border rounded p-2 mb-3">
-            <a href="enConstruccion.html" class="text-decoration-none">Ver consultas</a>
+        <nav class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 bg-white border rounded p-3 mb-2">
+                    <a href="enConstruccion.html" class="text-decoration-none">Ver consultas</a>
+                </div>
+            </div>
         </nav>
 
+
         <!-- Main Content -->
-        <main class="row">
-            <!-- Left Column -->
-            <aside class="col-md-3 bg-white border rounded p-3 me-3">
-                <h5 class="fw-bold">Calculadoras</h5>
-                <ul class="list-unstyled">
-                    <li><a href="calculator.html" class="text-decoration-none">Básicas</a></li>
-                    <li><a href="enConstruccion.html" class="text-decoration-none">Científicas</a></li>
-                    <li><a href="enConstruccion.html" class="text-decoration-none">Geométricas</a></li>
-                </ul>
-                <h5 class="fw-bold">Funciones</h5>
-                <ul class="list-unstyled">
-                    <li><a href="enConstruccion.html" class="text-decoration-none">Trigonométricas</a></li>
-                    <li><a href="enConstruccion.html" class="text-decoration-none">Algebraicas</a></li>
-                    <li><a href="enConstruccion.html" class="text-decoration-none">Series</a></li>
-                </ul>
-            </aside>
+        <main class="container-fluid bg-white border rounded p-3">
+            <div class="row">
+                <!-- Left Column -->
+                <aside class="col-md-2">
+                    <div class="p-4 border rounded mb-3">
+                        <h5 class="fw-bold">Calculadoras</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="calculator.html" class="text-decoration-none">Básicas</a></li>
+                            <li><a href="enConstruccion.html" class="text-decoration-none">Científicas</a></li>
+                            <li><a href="enConstruccion.html" class="text-decoration-none">Geométricas</a></li>
+                        </ul>
+                        <h5 class="fw-bold">Funciones</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="enConstruccion.html" class="text-decoration-none">Trigonométricas</a></li>
+                            <li><a href="enConstruccion.html" class="text-decoration-none">Algebraicas</a></li>
+                            <li><a href="enConstruccion.html" class="text-decoration-none">Series</a></li>
+                        </ul>
+                    </div>
+                </aside>
 
-            <!-- Center Column -->
-            <section class="col-md-6 bg-white border rounded p-3">
-                <h3>Calculadora científica</h3>
-                
-                <div class="row mb-4">
-                    <div class="col-md-4">
-                        <img src="imagenes/img3.webp" alt="Calculadora" class="img-fluid rounded">
-                        <a href="enConstruccion.html" class="d-block mt-2">Seguir leyendo</a>
+                <!-- Center Column -->
+                <section class="col-md-7">
+                    <div class="p-4 border rounded mb-3">
+                        <h3>Calculadora científica</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="imagenes/img3.webp" alt="Calculadora" class="img-fluid rounded">
+                                <a href="enConstruccion.html" class="d-block mt-2">Seguir leyendo</a>
+                            </div>
+                            <div class="col-md-8">
+                                <p>
+                                    Una calculadora es un dispositivo que se utiliza para realizar cálculos aritméticos. Aunque las calculadoras modernas incorporan a menudo un ordenador de propósito general, se diseñan para realizar operaciones más que para ser flexibles. Por ejemplo, existen calculadoras gráficas especializadas en campos matemáticos gráficos como la trigonometría y la estadística.
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="imagenes/Mag.png" alt="Funciones" class="img-fluid rounded">
+                                <a href="enConstruccion.html" class="d-block mt-2">Seguir leyendo</a>
+                            </div>
+                            <div class="col-md-8">
+                                <p>
+                                    En matemáticas, se dice que una magnitud o cantidad es función de otra si el valor de la primera depende de la segunda. Por ejemplo, el área A de un círculo varía en función del cuadrado del radio r (A = π·r²). Del mismo modo, la distancia d que recorre un tren entre dos ciudades separadas por una distancia d de 150 km depende de la velocidad v a la que se desplace el tren.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <p>Una calculadora es un dispositivo que se utiliza para realizar cálculos aritméticos...</p>
-                    </div>
-                </div>
+                </section>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="imagenes/Mag.png" alt="Funciones" class="img-fluid rounded">
-                        <a href="enConstruccion.html" class="d-block mt-2">Seguir leyendo</a>
+                <!-- Right Column -->
+                <aside class="col-md-3">
+                    <div class="p-4 border rounded">
+                        <h5 class="fw-bold">Marcas de calculadoras</h5>
+                        <p>
+                            En el mercado se encuentra una amplia y diversa selección de marcas. <a href="enConstruccion.html">Seguir leyendo</a>
+                        </p>
+                        
+                        <h5 class="fw-bold">Software</h5>
+                        <p>
+                            Hoy en día nos podemos encontrar el software con el que puedes realizar cálculos y operaciones de manera sencilla y con un diseño atractivo. <a href="enConstruccion.html   ">Seguir leyendo</a>
+                        </p>
                     </div>
-                    <div class="col-md-8">
-                        <p>En matemáticas, se dice que una magnitud o cantidad es función de otra...</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Right Column -->
-            <aside class="col-md-2 bg-white border rounded p-3 ms-3">
-                <h5 class="fw-bold">Marcas de calculadoras</h5>
-                <p>En el mercado se encuentra una amplia y diversa selección de marcas. <a href="enConstruccion.html">Seguir leyendo</a></p>
-                
-                <h5 class="fw-bold">Software</h5>
-                <p>Hoy en día nos podemos encontrar el software con el que puedes realizar cálculos... <a href="enConstruccion.html">Seguir leyendo</a></p>
-            </aside>
+                </aside>
+            </div>
         </main>
 
         <!-- Footer -->
-        <footer class="row bg-white border rounded p-3 mt-3">
-            <div class="col-md-6">
-                <a href="enConstruccion.html" class="text-decoration-none me-3">Descargas</a>
-                <a href="enConstruccion.html" class="text-decoration-none me-3">Aplicaciones</a>
-                <a href="enConstruccion.html" class="text-decoration-none">Dispositivos</a>
-            </div>
-            <div class="col-md-6 text-end">
-                <span class="text-muted">© Fmat</span>
+        <footer class="container-fluid "> 
+            <div class="row bg-white border rounded p-3 mt-2">
+                <div class="col-md-6">
+                    <a href="enConstruccion.html" class="text-decoration-none me-3">Descargas</a>
+                    <a href="enConstruccion.html" class="text-decoration-none me-3">Aplicaciones</a>
+                    <a href="enConstruccion.html" class="text-decoration-none">Dispositivos</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="text-muted">© Fmat</span>
+                </div>
             </div>
         </footer>
     </div>

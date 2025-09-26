@@ -1,0 +1,51 @@
+        <main class="row">
+            <!-- Left Column -->
+            <aside class="col-md-2 bg-white border rounded p-3 me-3">
+                <h5 class="fw-bold">Calculadoras</h5>
+                <ul class="list-unstyled">
+                    <li><a href="calculator.html" class="text-decoration-none">Básicas</a></li>
+                    <li><a href="enConstruccion.html" class="text-decoration-none">Científicas</a></li>
+                    <li><a href="enConstruccion.html" class="text-decoration-none">Geométricas</a></li>
+                </ul>
+                <h5 class="fw-bold">Funciones</h5>
+                <ul class="list-unstyled">
+                    <li><a href="enConstruccion.html" class="text-decoration-none">Trigonométricas</a></li>
+                    <li><a href="enConstruccion.html" class="text-decoration-none">Algebraicas</a></li>
+                    <li><a href="enConstruccion.html" class="text-decoration-none">Series</a></li>
+                </ul>
+            </aside>
+
+            <!-- Center Column -->
+            <section class="col-md-6 bg-white border rounded p-3">
+                <h3>Calculadora científica</h3>
+                
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <img src="imagenes/img3.webp" alt="Calculadora" class="img-fluid rounded">
+                        <a href="enConstruccion.html" class="d-block mt-2">Seguir leyendo</a>
+                    </div>
+                    <div class="col-md-8">
+                        <p>Una calculadora es un dispositivo que se utiliza para realizar cálculos aritméticos...</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="imagenes/Mag.png" alt="Funciones" class="img-fluid rounded">
+                        <a href="enConstruccion.html" class="d-block mt-2">Seguir leyendo</a>
+                    </div>
+                    <div class="col-md-8">
+                        <p>En matemáticas, se dice que una magnitud o cantidad es función de otra...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column -->
+            <aside class="col-md-2 bg-white border rounded p-3 ms-3">
+                <h5 class="fw-bold">Marcas de calculadoras</h5>
+                <p>En el mercado se encuentra una amplia y diversa selección de marcas. <a href="enConstruccion.html">Seguir leyendo</a></p>
+                
+                <h5 class="fw-bold">Software</h5>
+                <p>Hoy en día nos podemos encontrar el software con el que puedes realizar cálculos... <a href="enConstruccion.html">Seguir leyendo</a></p>
+            </aside>
+        </main>

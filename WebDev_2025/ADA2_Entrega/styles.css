@@ -1,0 +1,26 @@
+
+.construction-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.calculator-btn {
+    min-width: 60px;
+}
+
+.img-fluid {
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.construction-animation {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 50px;
+}
