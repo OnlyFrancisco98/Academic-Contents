@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA1</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="paginaPrincipal">
+        <header>
+            <h2>Calculadoras y funciones matemáticas</h2>
+
+            <div class="search-box">
+                <form id="formBuscar" method="post" action="buscar.php" autocomplete="off">
+                    <input type="text" name="buscar" id="buscar">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+
+        </header>
+
+        
+        <nav>
+            <a href="enConstruccion.html">Ver consultas</a>
+        </nav>
+        <main class="contenedor">
+            <aside class="columna-izq">
+                <b>Calculadoras</b>
+                <ul>
+                    <li><a href="calculator.html">Básicas</a></li>
+                    <li><a href="enConstruccion.html">Científicas</a></li>
+                    <li><a href="enConstruccion.html">Geométricas</a></li>
+                </ul>
+                <b>Funciones</b>
+                <ul>
+                    <li><a href="enConstruccion.html">Trigonométricas</a></li>
+                    <li><a href="enConstruccion.html">Algebraicas</a></li>
+                    <li><a href="enConstruccion.html">Series</a></li>
+                </ul>
+            </aside>
+            <section class="columna-central">
+                <h3>Calculadora científica</h3>
+                <div class="container">
+                    <div class="imagen">
+                        <img src="imagenes/img3.webp" alt="cals">
+                        <a href="enConstruccion.html">Seguir leyendo</a>
+                    </div>
+
+                    <div class="texto">
+                    <p>
+                        Una calculadora es un dispositivo que se utiliza para realizar cálculos aritméticos. Aunque las calculadoras modernas incorporan a menudo un ordenador de propósito general, se diseñan para realizar operaciones más que para ser flexibles. Por ejemplo, existen calculadoras gráficas especializadas en campos matemáticos gráficos como la trigonometría y la estadística.
+                    </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="imagen">
+                        <img src="imagenes/Mag.png" alt="cals">
+                        <a href="enConstruccion.html">Seguir leyendo</a>
+                    </div>
+
+                    <div class="texto">
+                    <p>
+                        En matemáticas, se dice que una magnitud o cantidad es función de otra si el valor de la primera depende de la segunda. Por ejemplo, el área A de un círculo varía en función del cuadrado del radio r (A = π·r²). Del mismo modo, la distancia d que recorre un tren entre dos ciudades separadas por una distancia d de 150 km depende de la velocidad v a la que se desplace el tren.
+                    </p>
+                    </div>
+                </div>
+            </section>
+            <aside class="columna-der">
+                <b>Marcas de calculadoras</b>
+                <p>
+                    En el mercado se encuentra una amplia y diversa selección de marcas. <a href="enConstruccion.html">Seguir leyendo</a>
+                </p>
+                <b>Software</b>
+                <p>
+                    Hoy en día nos podemos encontrar el software con el que puedes realizar cálculos y operaciones de manera sencilla y con un diseño atractivo. <a href="enConstruccion.html   ">Seguir leyendo</a>
+                </p>
+            </aside>
+        </main>
+        <footer>
+            <div class="enlaces-footer">
+                <a href="enConstruccion.html">Descargas</a> |
+                <a href="enConstruccion.html">Aplicaciones</a> |
+                <a href="enConstruccion.html">Dispositivos</a>
+            </div>
+            <div class="marca-footer">
+                © Fmat
+            </div>
+        </footer>
+
+        
+    <!-- ...existing code... -->
+    </div>
+
+      <script>
+    document.getElementById('formBuscar').addEventListener('submit', function (e) {
+      e.preventDefault(); // evita que el form se envíe por defecto
+
+      let campo = document.getElementById('buscar').value.trim();
+
+      if (campo === "") {
+            alert("Ingresa algo en el campo. No dejar blanco");
+      } else {
+        // Redirige a una página en blanco (puedes poner tu URL real aquí)
+        window.location.href = "about:blank";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        let numero1, numero2;
+        let resultadoElemento;
+
+        function capturaNum(){
+            numero1 = parseFloat(document.getElementById('numero1').value);
+            numero2 = parseFloat(document.getElementById('numero2').value);
+            resultadoElemento = document.getElementById('resultado');
+        }
+
+        function suma() {
+            capturaNum();
+            if (isNaN(numero1) || isNaN(numero2)) {
+                alert("Ingrese numeros validos");
+                return;
+            }
+            let resultado = numero1 + numero2;
+            resultadoElemento.textContent = resultado;
+        }
+
+        function resta() {
+            capturaNum();
+            if (isNaN(numero1) || isNaN(numero2)) {
+                alert("Ingrese numeros validos");
+                return;
+            }
+            let resultado = numero1 - numero2;
+            resultadoElemento.textContent = resultado;
+        }
+
+        function div() {
+            capturaNum();
+            if (isNaN(numero1) || isNaN(numero2)) {
+                alert("Ingrese numeros validos");
+                return;
+            }
+            if (numero2 !== 0) {
+                let resultado = numero1 / numero2;
+                resultadoElemento.textContent = resultado;
+            } else {
+                alert("No se puede dividir por 0");
+                resultadoElemento.textContent = "Error";
+            }
+        }
+
+        function multi() {
+            capturaNum();
+            if (isNaN(numero1) || isNaN(numero2)) {
+                alert("Ingrese numeros validos");
+                return;
+            }
+            let resultado = numero1 * numero2;
+            resultadoElemento.textContent = resultado;
+        }
+
+        function raiz() {
+            capturaNum();
+            if (isNaN(numero1)) {
+                alert("Ingrese un numero valido");
+                return;
+            }
+            if (numero1 >= 0) {
+                let resultado = Math.sqrt(numero1);
+                resultadoElemento.textContent = resultado;
+            } else {
+                alert("No se puede sacar la raíz de un número negativo");
+                resultadoElemento.textContent = "Error";
+            }
+        }
+
+        function unoSobreX() {
+            capturaNum();
+            if (isNaN(numero1)) {
+                alert("Ingrese un numero valido");
+                return;
+            }
+            if (numero1 !== 0) {
+                let resultado = 1 / numero1;
+                resultadoElemento.textContent = resultado;
+            } else {
+                alert("No se puede dividir por 0");
+                resultadoElemento.textContent = "Error";
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div class="paginaPrincipal">
+        <header>
+            <h2>Calculadoras y funciones matemáticas</h2>
+        </header>
+
+        
+        <nav>
+            <a href="enConstruccion.html">Ver consultas</a>
+        </nav>
+        <main class="contenedor">
+            <div class = "calculadorsita">
+                <h2>Calculadora Básica</h2>
+                
+                <div class="input-group">
+                        <label for="numero1">Número 1:</label>
+                        <input type="number" id="numero1" step="any">
+                </div>
+                <br>
+                <div class="input-group">
+                    <label for="numero2">Número 2:</label>
+                    <input type="number" id="numero2" step="any">
+                </div>
+                <br>
+                <div class="button-group">
+                    <input type="button" value="+" onclick="suma()"> 
+                    <input type="button" value="-" onclick="resta()"> <br>
+                    <input type="button" value="×" onclick="multi()"> 
+                    <input type="button" value="/" onclick="div()"> <br>
+                    <input type="button" value="sqrt" onclick="raiz()"> 
+                    <input type="button" value="1/x" onclick="unoSobreX()">
+                </div>
+                <br>
+                
+                <div class="result">
+                    Resultado: <span id="resultado"></span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="enlaces-footer">
+                <a href="enConstruccion.html">Descargas</a> |
+                <a href="enConstruccion.html">Aplicaciones</a> |
+                <a href="enConstruccion.html">Dispositivos</a>
+            </div>
+            <div class="marca-footer">
+                © Fmat
+            </div>
+        </footer>
+    <!-- ...existing code... -->
+    </div>
+</body>
+</html>
