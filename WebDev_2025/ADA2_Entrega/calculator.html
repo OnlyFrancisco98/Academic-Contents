@@ -110,6 +110,21 @@
     <script>
         $(document).ready(function() {
             // Función para mostrar errores en modal
+
+            $('#formBuscar').submit(function(e) {
+                e.preventDefault();
+                
+                const campo = $('#buscar').val().trim();
+                
+                if (campo === "") {
+                    alert("Ingresa algo en el campo. No dejar blanco");
+                    $('#buscar').focus();
+                } else {
+                    // Redirigir a una página vacía
+                    window.location.href = "about:blank";
+                }
+            });
+            
             function mostrarError(mensaje) {
                 $('#errorMessage').text(mensaje);
                 $('#errorModal').modal('show');

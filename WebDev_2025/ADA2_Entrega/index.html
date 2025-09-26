@@ -131,9 +131,8 @@
                     alert("Ingresa algo en el campo. No dejar blanco");
                     $('#buscar').focus();
                 } else {
-                    // Simular envío (sin PHP)
-                    alert("Búsqueda enviada: " + campo);
-                    // window.location.href = "buscar.php"; // Descomentar cuando tengas el PHP
+                    // Redirigir a una página vacía
+                    window.location.href = "about:blank";
                 }
             });
         });
