@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="container ">
                     <div class="construction-animation text-warning">
-                         🚧 En construcción...
+                         En construcción...
                     </div>
                 </div>
             </div>
@@ -82,11 +82,11 @@
 
         $(document).ready(function() {
             // Efecto de animación con jQuery
-            $('.construction-animation').hide().fadeIn(1000).css('color', '#ff6b35');
+            $('.construction-animation').fadeIn(1000)
             
             // Animación de parpadeo
             setInterval(function() {
-                $('.construction-animation').fadeTo(500, 0.3).fadeTo(500, 1);
+                $('.construction-animation').fadeTo(500, 1);
             }, 1000);
         });
     </script>

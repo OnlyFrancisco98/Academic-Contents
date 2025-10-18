@@ -1,6 +1,6 @@
 
 .construction-animation {
-    animation: pulse 2s infinite;
+    animation: pulse 3s infinite;
 }
 
 @keyframes pulse {
@@ -19,8 +19,8 @@
 }
 
 .construction-animation {
-            font-size: 2rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 50px;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 50px;
 }
