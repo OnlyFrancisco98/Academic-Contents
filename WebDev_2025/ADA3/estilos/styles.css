@@ -4,6 +4,10 @@ header {
     text-align: left;
     font-weight: bold;
 }
+header a {
+    color: white;
+    text-decoration: none;
+}
 
 footer {
     background-color: rgb(232, 232, 232);

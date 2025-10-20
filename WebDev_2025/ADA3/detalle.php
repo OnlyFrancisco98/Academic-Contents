@@ -1,15 +1,41 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: index.html");
+    exit;
+}
+
+$matricula = $_POST['matricula'] ?? '';
+
+$estudiantes = [
+    "A001" => ["nombre" => "Jesús", "apellidos" => "Aviles", "asignatura" => "Desarrollo web", "calificacion" => 100],
+    "A002" => ["nombre" => "Frans", "apellidos" => "Montero", "asignatura" => "Desarrollo web", "calificacion" => 100],
+    "A003" => ["nombre" => "K", "apellidos" => "M", "asignatura" => "Futbol", "calificacion" => 92],
+    "A004" => ["nombre" => "Ana", "apellidos" => "García", "asignatura" => "Bases de datos", "calificacion" => 85],
+    "A005" => ["nombre" => "Carlos", "apellidos" => "Martínez", "asignatura" => "Redes", "calificacion" => 78],
+    "A006" => ["nombre" => "Sofía", "apellidos" => "López", "asignatura" => "Sistemas Operativos", "calificacion" => 95],
+    "A007" => ["nombre" => "David", "apellidos" => "Hernández", "asignatura" => "Desarrollo web", "calificacion" => 88],
+    "A008" => ["nombre" => "Laura", "apellidos" => "Pérez", "asignatura" => "Cálculo", "calificacion" => 72],
+    "A009" => ["nombre" => "Miguel", "apellidos" => "Sánchez", "asignatura" => "Inteligencia Artificial", "calificacion" => 91]
+];
+
+$e = $estudiantes[$matricula] ?? null;
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADA3</title>
+    <title>Detalles del Estudiante</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="estilos/styles.css">
 </head>
+
 <body>
+
     <header>
         <div class="container-fluid p-4">
             <div class="row">
@@ -27,32 +53,26 @@
     </header>
 
     <main>
-        <div class="container-md my-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="card-body p-4">
-                        <h3 class="card-title text-center"> Inicio de Sesión</h3>
-                        <br>
-                        <form action="valida.php" method="post">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" name="usuario" placeholder="Usuario" required>
-                                <label for="floatingInput">Usuario</label>
-                            </div>
-                                
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" name="contrasena" placeholder="Contraseña" required>
-                                <label for="floatingPassword">Contraseña</label>
-                            </div>
-                            
-                            <div class="d-grid">
-                                <button class="btn btn-secondary btn-lg" type="submit">Entrar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+        <div class="container md-5 p-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3>Usuario: <?php echo htmlspecialchars($_SESSION['usuario']); ?></h3>
+                <a href="cerrarSesion.php" class="btn btn-danger btn-sm">Cerrar sesión</a>
             </div>
-        </div>
 
+            <?php if ($e): ?>
+                <h4 class="mb-3">Calificaciones</h4>
+                <div class="card p-3 shadow-sm">
+                    <p><strong>Nombre:</strong> <?php echo $e['nombre']; ?></p>
+                    <p><strong>Apellidos:</strong> <?php echo $e['apellidos']; ?></p>
+                    <p><strong>Asignatura:</strong> <?php echo $e['asignatura']; ?></p>
+                    <p><strong>Calificación:</strong> <?php echo $e['calificacion']; ?></p>
+                </div>
+            <?php else: ?>
+                <p class="text-danger">No se encontró el estudiante.</p>
+            <?php endif; ?>
+
+            <a href="lista.php" class="btn btn-secondary mt-3">Regresar</a>
+        </div>
     </main>
 
     <footer>
@@ -87,6 +107,6 @@
             © 2025 Copyright: Pónganos 10 profe plox
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
