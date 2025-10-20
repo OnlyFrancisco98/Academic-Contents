@@ -1,22 +1,18 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
-    header("Location: index.html");
-    exit;
-}
 
 $matricula = $_POST['matricula'] ?? '';
 
 $estudiantes = [
-    "A001" => ["nombre" => "Jesús", "apellidos" => "Aviles", "asignatura" => "Desarrollo web", "calificacion" => 100],
-    "A002" => ["nombre" => "Frans", "apellidos" => "Montero", "asignatura" => "Desarrollo web", "calificacion" => 100],
-    "A003" => ["nombre" => "K", "apellidos" => "M", "asignatura" => "Futbol", "calificacion" => 92],
-    "A004" => ["nombre" => "Ana", "apellidos" => "García", "asignatura" => "Bases de datos", "calificacion" => 85],
-    "A005" => ["nombre" => "Carlos", "apellidos" => "Martínez", "asignatura" => "Redes", "calificacion" => 78],
-    "A006" => ["nombre" => "Sofía", "apellidos" => "López", "asignatura" => "Sistemas Operativos", "calificacion" => 95],
-    "A007" => ["nombre" => "David", "apellidos" => "Hernández", "asignatura" => "Desarrollo web", "calificacion" => 88],
-    "A008" => ["nombre" => "Laura", "apellidos" => "Pérez", "asignatura" => "Cálculo", "calificacion" => 72],
-    "A009" => ["nombre" => "Miguel", "apellidos" => "Sánchez", "asignatura" => "Inteligencia Artificial", "calificacion" => 91]
+    "A1" => ["nombre" => "Jesús", "apellidos" => "Aviles", "asignatura" => "Desarrollo web", "calificacion" => 100],
+    "A2" => ["nombre" => "Frans", "apellidos" => "Montero", "asignatura" => "Desarrollo web", "calificacion" => 100],
+    "A3" => ["nombre" => "K", "apellidos" => "M", "asignatura" => "Futbol", "calificacion" => 92],
+    "A4" => ["nombre" => "Ana", "apellidos" => "García", "asignatura" => "Bases de datos", "calificacion" => 85],
+    "A5" => ["nombre" => "Carlos", "apellidos" => "Martínez", "asignatura" => "Redes", "calificacion" => 78],
+    "A6" => ["nombre" => "Sofía", "apellidos" => "López", "asignatura" => "Sistemas Operativos", "calificacion" => 95],
+    "A7" => ["nombre" => "David", "apellidos" => "Hernández", "asignatura" => "Desarrollo web", "calificacion" => 88],
+    "A8" => ["nombre" => "Laura", "apellidos" => "Pérez", "asignatura" => "Cálculo", "calificacion" => 72],
+    "A9" => ["nombre" => "Miguel", "apellidos" => "Sánchez", "asignatura" => "Inteligencia Artificial", "calificacion" => 91]
 ];
 
 $e = $estudiantes[$matricula] ?? null;
@@ -52,7 +48,7 @@ $e = $estudiantes[$matricula] ?? null;
         </div>  
     </header>
 
-    <main>
+    <main id="bienvenida" style="display:none;">
         <div class="container md-5 p-5">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h3>Usuario: <?php echo htmlspecialchars($_SESSION['usuario']); ?></h3>
@@ -107,6 +103,15 @@ $e = $estudiantes[$matricula] ?? null;
             © 2025 Copyright: Pónganos 10 profe plox
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#bienvenida").fadeIn(200);
+
+        });
+    </script>
 </body>
 
 </html>

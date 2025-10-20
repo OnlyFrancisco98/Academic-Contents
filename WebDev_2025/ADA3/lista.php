@@ -1,21 +1,17 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
-    header("Location: index.html");
-    exit;
-}
 
 // Matriz de estudiantes
 $estudiantes = [
-    ["matricula" => "A001", "nombre" => "Jesús", "apellidos" => "Aviles", "asignatura" => "Desarrollo web", "calificacion" => 100],
-    ["matricula" => "A002", "nombre" => "Frans", "apellidos" => "Montero", "asignatura" => "Desarrollo web", "calificacion" => 100],
-    ["matricula" => "A003", "nombre" => "K", "apellidos" => "M", "asignatura" => "Futbol", "calificacion" => 92],
-    ["matricula" => "A004", "nombre" => "Ana", "apellidos" => "García", "asignatura" => "Bases de datos", "calificacion" => 85],
-    ["matricula" => "A005", "nombre" => "Carlos", "apellidos" => "Martínez", "asignatura" => "Redes", "calificacion" => 78],
-    ["matricula" => "A006", "nombre" => "Sofía", "apellidos" => "López", "asignatura" => "Sistemas Operativos", "calificacion" => 95],
-    ["matricula" => "A007", "nombre" => "David", "apellidos" => "Hernández", "asignatura" => "Desarrollo web", "calificacion" => 88],
-    ["matricula" => "A008", "nombre" => "Laura", "apellidos" => "Pérez", "asignatura" => "Cálculo", "calificacion" => 72],
-    ["matricula" => "A009", "nombre" => "Miguel", "apellidos" => "Sánchez", "asignatura" => "Inteligencia Artificial", "calificacion" => 91]
+    ["matricula" => "A1", "nombre" => "Jesús", "apellidos" => "Aviles", "asignatura" => "Desarrollo web", "calificacion" => 100],
+    ["matricula" => "A2", "nombre" => "Frans", "apellidos" => "Montero", "asignatura" => "Desarrollo web", "calificacion" => 100],
+    ["matricula" => "A3", "nombre" => "K", "apellidos" => "M", "asignatura" => "Futbol", "calificacion" => 92],
+    ["matricula" => "A4", "nombre" => "Ana", "apellidos" => "García", "asignatura" => "Bases de datos", "calificacion" => 85],
+    ["matricula" => "A5", "nombre" => "Carlos", "apellidos" => "Martínez", "asignatura" => "Redes", "calificacion" => 78],
+    ["matricula" => "A6", "nombre" => "Sofía", "apellidos" => "López", "asignatura" => "Sistemas Operativos", "calificacion" => 95],
+    ["matricula" => "A7", "nombre" => "David", "apellidos" => "Hernández", "asignatura" => "Desarrollo web", "calificacion" => 88],
+    ["matricula" => "A8", "nombre" => "Laura", "apellidos" => "Pérez", "asignatura" => "Cálculo", "calificacion" => 72],
+    ["matricula" => "A9", "nombre" => "Miguel", "apellidos" => "Sánchez", "asignatura" => "Inteligencia Artificial", "calificacion" => 91]
 ];
 ?>
 <!DOCTYPE html>
@@ -47,7 +43,7 @@ $estudiantes = [
         </div>  
     </header>
 
-    <main>
+    <main id="bienvenida" style="display:none;">
         <div class="container md-5 p-5">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h3>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?></h3>
@@ -60,7 +56,7 @@ $estudiantes = [
             </div>
 
             <form action="detalle.php" method="post">
-                <table class="table table-striped table-hover">
+                <table class="table table-striped-columns">
                     <thead>
                         <tr>
                             <th>Seleccionar</th>
@@ -121,6 +117,8 @@ $estudiantes = [
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function() {
+
+            $("#bienvenida").fadeIn(1000);
             
             $("#filtroEstudiantes").on("keyup", function() {
                 var value = $(this).val().toLowerCase();

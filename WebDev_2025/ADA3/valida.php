@@ -2,8 +2,8 @@
 session_start();
 
 // Credenciales fijas
-$usuario_valido = "admin";
-$contrasena_valida = "1234";
+$usuario_valido = "Jesusito123";
+$contrasena_valida = "admin";
 
 $usuario = $_POST['usuario'] ?? '';
 $contrasena = $_POST['contrasena'] ?? '';
