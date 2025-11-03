@@ -1,0 +1,71 @@
+body{background-image: url(https://i.redd.it/adiglyj5cgnz.png)}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    background-color: #395b88; /* Verde */
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+header a {
+    color: white;
+}
+
+footer {
+    
+    background-color: rgb(232, 232, 232);
+    text-align: left;
+    line-height: 2.5;
+}
+
+footer .copyrigth {
+    text-align: center;
+    background-color: rgb(221, 221, 221);
+    padding: 20px 0;
+}
+footer a {
+    color: black;
+
+}
+
+#mi-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+    padding: 1rem 2rem;
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mi-header.header-solido {
+    background-color: #152438;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#mi-header.header-solido a {
+    color: white;
+}
+
+.card-link{
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: var(--bs-card-border-radius);
+}
+.card-link .card {
+    transition: transform 0.3s ease-in-out;
+}
+.card-link:hover .card {
+    transform: scale(1.03);
+}
+
+.espacio-pedidos{
+    background-color: white;
+}
