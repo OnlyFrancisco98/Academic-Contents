@@ -1,0 +1,22 @@
+header {
+    background-color: #395b88; /* Verde */
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-color: rgb(232, 232, 232);
+    
+    text-align: center;
+}
+
+footer .copyrigth {
+    text-align: center;
+    background-color: rgb(221, 221, 221);
+    padding: 20px 0;
+}
