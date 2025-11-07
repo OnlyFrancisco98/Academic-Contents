@@ -1,8 +1,7 @@
 <?php
 session_start();
-// Si ya está logueado, redirigir al panel
 if (isset($_SESSION['admin_logueado']) && $_SESSION['admin_logueado'] === true) {
-    header('Location: panel_admin.php');
+    header('Location: ../pages/panel_admin.php');
     exit;
 }
 ?>
@@ -11,7 +10,7 @@ if (isset($_SESSION['admin_logueado']) && $_SESSION['admin_logueado'] === true) 
 <head>
     <meta charset="UTF-8">
     <title>Login de Admin</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../public/css/styles.css">
 </head>
 <body>
     <div class="container" style="max-width: 400px;">
@@ -24,7 +23,7 @@ if (isset($_SESSION['admin_logueado']) && $_SESSION['admin_logueado'] === true) 
         }
         ?>
 
-        <form action="validar.php" method="POST">
+        <form action="validar_admin.php" method="POST">
             <div>
                 <label for="usuario">Usuario:</label>
                 <input type="text" id="usuario" name="usuario" value="admin" required>

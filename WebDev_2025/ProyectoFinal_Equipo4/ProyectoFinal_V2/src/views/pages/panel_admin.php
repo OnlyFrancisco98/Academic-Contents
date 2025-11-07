@@ -1,19 +1,14 @@
 <?php
+
+require '../templates/header.php';
+
 session_start();
-// Seguridad: Si no está logueado, lo saca al login
 if (!isset($_SESSION['admin_logueado']) || $_SESSION['admin_logueado'] !== true) {
     header('Location: login.php');
     exit;
 }
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Panel de Administrador</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+
     <div class="container">
         <h2>Panel de Administrador</h2>
         <p>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?>.</p>
@@ -22,7 +17,7 @@ if (!isset($_SESSION['admin_logueado']) || $_SESSION['admin_logueado'] !== true)
 
         <h3>Añadir Nueva Entrada al Blog</h3>
         
-        <form action="crear_entrada.php" method="POST" enctype="multipart/form-data">
+        <form action="../../controllers/crear_entrada.php" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="autor">Autor:</label>
                 <input type="text" id="autor" name="autor" required>
@@ -43,7 +38,9 @@ if (!isset($_SESSION['admin_logueado']) || $_SESSION['admin_logueado'] !== true)
         </form>
 
         <br>
-        <a href="logout.php" class="logout-link">Cerrar Sesión</a>
+        <a href="../../controllers/ControladorAutentificacion.php?action=logout" class="logout-link">Cerrar Sesión</a>
     </div>
-</body>
-</html>
+
+<?php
+    require '../templates/footer.php';
+?>

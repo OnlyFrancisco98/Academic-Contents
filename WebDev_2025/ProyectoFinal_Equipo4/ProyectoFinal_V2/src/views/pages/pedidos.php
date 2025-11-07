@@ -17,7 +17,7 @@
             <h1>Mis Pedidos</h1>
             <p class="lead">Hola, <?php echo htmlspecialchars($_SESSION['correo']); ?>.</p>
             <hr>
-            <a href="cerrarSesion.php" class="btn btn-outline-danger">Cerrar Sesión</a>
+            <a href="../../controllers/ControladorAutentificacion.php?action=logout" class="btn btn-outline-danger">Cerrar Sesión</a>
         </div>
 
         <div class="card mt-3">

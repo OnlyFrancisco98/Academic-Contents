@@ -38,9 +38,9 @@
                     <?php
                         // Esta lógica de sesión está ahora en UN solo lugar
                         if (isset($_SESSION['correo'])) {
-                            echo '<a class="ms-4" href="pedidos.php"><img src="' . BASE_URL . 'public/imagenes/User.svg" alt="Mis Pedidos" style="width:25px;"></a>';
+                            echo '<a class="ms-4" href="../pages/pedidos.php"><img src="' . BASE_URL . 'public/imagenes/User.svg" alt="Mis Pedidos" style="width:25px;"></a>';
                         } else {
-                            echo '<a class="ms-4" href="login.php"><img src="' . BASE_URL . 'public/imagenes/User.svg" alt="Usuario" style="width:25px;"></a>';
+                            echo '<a class="ms-4" href="../autentificacion/login.php"><img src="' . BASE_URL . 'public/imagenes/User.svg" alt="Usuario" style="width:25px;"></a>';
                         }
                     ?>
                 </div>

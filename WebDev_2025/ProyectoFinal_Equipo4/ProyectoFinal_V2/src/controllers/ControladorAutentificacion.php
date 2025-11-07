@@ -4,13 +4,21 @@ class ControladorAutentificacion {
 
 
     public function logout(){
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
         session_unset();
         session_destroy();
 
-        header("Location: /");
+        header("Location: /src/views/pages/index.php");
         exit();
     }
+}
+
+if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+    $authController = new ControladorAutentificacion();
+    $authController->logout();
 }
 
 ?>

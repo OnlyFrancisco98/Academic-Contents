@@ -1,8 +1,7 @@
 <?php
 session_start();
-require 'db_conexion.php';
+require '../config/db_Conexion.php';
 
-// 1. Seguridad: Verificar si es admin
 if (!isset($_SESSION['admin_logueado']) || $_SESSION['admin_logueado'] !== true) {
     die("Acceso no autorizado.");
 }
@@ -10,10 +9,8 @@ if (!isset($_SESSION['admin_logueado']) || $_SESSION['admin_logueado'] !== true)
 // 2. Verificar que el método sea POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // 3. Definir directorio de subidas
-    $directorio_subidas = 'uploads/'; // Asegúrate de que esta carpeta exista y tenga permisos
+    $directorio_subidas = '../../public/uploads'; 
     
-    // Validar que el archivo se subió correctamente
     if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] == 0) {
         
         // Crear un nombre de archivo único para evitar sobreescrituras
@@ -37,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->execute([$autor, $ruta_db, $texto_intro, $texto_completo]);
 
                 // 6. Redirigir al blog para ver la nueva entrada
-                header("Location: blog.php");
+                header("Location: ../views/pages/blog.php");
                 exit;
 
             } catch (PDOException $e) {
