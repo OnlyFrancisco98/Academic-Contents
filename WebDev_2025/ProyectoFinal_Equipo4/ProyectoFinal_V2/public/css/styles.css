@@ -219,3 +219,28 @@ button:hover {
     padding-top: 20px;
     white-space: pre-wrap; /* Respeta los saltos de línea y espacios */
 }
+
+
+.container {
+    max-width: 1300px; /* Antes era 900px, ahora es más ancho */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.precio-card {
+    font-size: 1.4rem;       /* Letra más grande */
+    font-weight: 800;        /* Negrita extra */
+    color: #395b88;          /* Usamos el azul de tu header */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
