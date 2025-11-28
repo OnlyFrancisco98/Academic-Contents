@@ -17,7 +17,7 @@
                 <?php endif; ?>
 
                 <p class="text-center text-muted mb-4">
-                    Ingresa tu correo institucional. Te enviaremos un código de validación.
+                    Ingresa tu correo. Te enviaremos un código de validación.
                 </p>
 
                 <form action="valida_email.php" method="post">
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="mt-4 text-center">
-                        <a href="loginAdmin.php" class="text-decoration-none">Ingresa como administrador</a>
+                        <a href="login_admin.php" class="text-decoration-none">Ingresa como administrador</a>
                     </div>
                 </form>
             </div>

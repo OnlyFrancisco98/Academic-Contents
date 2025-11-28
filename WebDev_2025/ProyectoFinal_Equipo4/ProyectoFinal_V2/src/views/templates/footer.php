@@ -5,21 +5,36 @@
                 <div class="col-md-6">  
                     <h2>Legal</h2>
                     <ul class="list-unstyled">
-                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Aviso de Privacidad</a></li>
-                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Términos y Condiciones</a></li>
-                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Política de Envíos</a></li>
-                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Política de Garantía</a></li>
+                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="../pages/aviso_privacidad.php">Aviso de Privacidad</a></li>
+                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="../pages/terminos.php">Términos y Condiciones</a></li>
+                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="../pages/politica_envios.php">Política de Envíos</a></li>
+                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="../pages/politica_garantia.php">Política de Garantía</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <h2>Información</h2>
                     <ul class="list-unstyled">
-                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Preguntas Frecuentes</a></li>
-                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Rastrear Pedido</a></li>
-                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Contáctanos</a></li>
+                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="../pages/faq.php">Preguntas Frecuentes</a></li>
+                        <li><a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" href="../pages/contacto.php">Contáctanos</a></li>
+                        
+                        <!-- LÓGICA DEL ENLACE DE ADMINISTRADOR -->
+                        <?php
+                            // Definimos la ruta dependiendo del rol
+                            // Asumimos que Rol 1 = Admin
+                            $rutaAdmin = (isset($_SESSION['rol']) && $_SESSION['rol'] == 1) 
+                                ? '../pages/panel_admin.php' 
+                                : '../autentificacion/login_admin.php';
+                        ?>
+                        <li>
+                            <a class="link-offset-2 link-offset-3-hover link-underline-dark link-underline-opacity-0 link-underline-opacity-75-hover" 
+                               href="<?php echo $rutaAdmin; ?>">
+                                Administrador
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
+            <!-- ... resto del footer ... -->
             <div class="row p-4">
                 <div class="col-12">
                     <h2 class="mb-4">¡Síguenos en nuestras redes sociales y sé parte de nuestra comunidad!</h2>

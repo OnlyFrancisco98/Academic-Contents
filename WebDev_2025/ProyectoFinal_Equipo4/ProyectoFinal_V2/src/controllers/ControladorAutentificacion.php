@@ -11,7 +11,7 @@ class ControladorAutentificacion {
         session_unset();
         session_destroy();
 
-        header("Location: /src/views/pages/index.php");
+        header("Location: ../views/pages/index.php");
         exit();
     }
 }

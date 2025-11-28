@@ -1,8 +1,9 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-require '../templates/header.php';
-require_once '../../config/conexion.php';
-session_start();
+require_once '../../config/conexion.php'; 
 
 if (!isset($_SESSION['auth_email'])) {
     header("Location: login.php");
@@ -13,44 +14,38 @@ $email_pendiente = $_SESSION['auth_email'];
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $codigo_ingresado = $_POST['codigo'] ?? '';
+    $codigo_ingresado = trim($_POST['codigo']);
 
     try {
-        // La consulta de verificación del código (que sea igual al de la BD)
-        $sql = "SELECT * FROM users WHERE email = :email AND access_code = :codigo";
-        $stmt = $pdo->prepare($sql);
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email AND access_code = :codigo");
         $stmt->execute([
-            ':email'  => $email_pendiente,
+            ':email' => $email_pendiente,
             ':codigo' => $codigo_ingresado
         ]);
-        
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($usuario) {
-
-            // Establecer variables de sesión
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['nombre']     = $usuario['full_name'];
             $_SESSION['rol']        = $usuario['role_id'];
             $_SESSION['correo']     = $usuario['email'];
 
-            $cleanStmt = $pdo->prepare("UPDATE users SET access_code = NULL WHERE id = :id");
-            $cleanStmt->execute([':id' => $usuario['id']]);
+            $pdo->prepare("UPDATE users SET access_code = NULL WHERE id = :id")->execute([':id' => $usuario['id']]);
 
             unset($_SESSION['auth_email']);
             header("Location: ../pages/index.php");
             exit;
 
         } else {
-            $error = "El código es incorrecto o ha expirado.";
+            $error = "Código incorrecto o expirado.";
         }
-
     } catch (PDOException $e) {
-        $error = "Error de conexión: " . $e->getMessage();
+        $error = "Error DB: " . $e->getMessage();
     }
 }
-?>
 
+require '../templates/header.php'; 
+?>
 <div class="container-md my-5">
     <div class="row justify-content-center">
         <div class="col-lg-5">

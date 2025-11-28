@@ -26,7 +26,9 @@
             <h1>Mis Pedidos</h1>
             <p class="lead">Hola, <?php echo htmlspecialchars($_SESSION['nombre'] ?? $_SESSION['correo']); ?>.</p>
             <hr>
-            <a href="logout.php" class="btn btn-outline-danger btn-sm">Cerrar Sesión</a>
+            <a href="../../controllers/ControladorAutentificacion.php?action=logout" class="btn btn-outline-danger btn-sm">
+                Cerrar Sesión
+            </a>
         </div>
 
         <div class="col-md-12 mt-4">

@@ -28,7 +28,6 @@ try {
 
     // --- ACCIÓN: OBTENER CARRITO ---
     if ($action === 'get') {
-        // Unimos cart_items con products y product_images
         $sql = "SELECT ci.quantity, p.id as product_id, p.name, p.price, pi.image_path 
                 FROM cart_items ci
                 JOIN products p ON ci.product_id = p.id

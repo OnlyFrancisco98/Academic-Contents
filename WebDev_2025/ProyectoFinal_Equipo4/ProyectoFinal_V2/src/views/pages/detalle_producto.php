@@ -74,7 +74,8 @@ try {
                     <button class="btn btn-dark btn-lg" id="btn-agregar-detalle" data-id="<?php echo $producto['id']; ?>">
                         AGREGAR AL CARRITO
                     </button>
-                    <button class="btn btn-primary btn-lg" style="background-color: #5a31f4; border:none;">
+                    
+                    <button class="btn btn-primary btn-lg" id="btn-comprar-ahora" data-id="<?php echo $producto['id']; ?>" style="background-color: #5a31f4; border:none;">
                         COMPRAR AHORA
                     </button>
                 </div>
@@ -136,6 +137,39 @@ $(document).ready(function() {
             },
             complete: function() {
                 btn.prop('disabled', false).text(originalText);
+            }
+        });
+    });
+
+    $('#btn-comprar-ahora').click(function() {
+        let pid = $(this).data('id');
+        let qty = $('#cantidad').val();
+        let btn = $(this);
+
+        // Feedback visual
+        let textoOriginal = btn.text();
+        btn.prop('disabled', true).text('Procesando...');
+
+        $.ajax({
+            url: '../../controllers/ajax_cart.php?action=add',
+            method: 'POST',
+            data: { 
+                product_id: pid, 
+                quantity: qty 
+            },
+            success: function(response) {
+                // Verificamos si hubo error de sesión
+                if(response.status === 'error' && response.message === 'No logueado') {
+                    window.location.href = '../autentificacion/login.php';
+                    return;
+                }
+
+                // SI TODO SALIÓ BIEN: Redirigir al Checkout inmediatamente
+                window.location.href = 'checkout.php';
+            },
+            error: function() {
+                alert('Ocurrió un error al procesar la solicitud.');
+                btn.prop('disabled', false).text(textoOriginal);
             }
         });
     });
